@@ -1,5 +1,4 @@
 import json
-import os
 
 
 def load_data(file_path):
@@ -21,14 +20,17 @@ for item in animals_data:
     diet = characteristics.get("diet")
     animal_type = characteristics.get("type", "N/A")
     if animal_type == "N/A":
-        output += f"Name: {name}\n"
-        output += f"Location: {location}\n"
-        output += f"Diet: {diet}\n\n"
+        output += '<li class="cards__item">'
+        output += f"Name: {name}<br/>\n"
+        output += f"Location: {location}<br/>\n"
+        output += f"Diet: {diet}<br/>\n"
     else:
-        output += f"Name: {name}\n"
-        output += f"Location: {location}\n"
-        output += f"Diet: {diet}\n"
-        output += f"Type: {animal_type}\n\n"
+        output += '<li class="cards__item">'
+        output += f"Name: {name}<br/>\n"
+        output += f"Location: {location}<br/>\n"
+        output += f"Diet: {diet}<br/>\n"
+        output += f"Type: {animal_type}<br/>\n"
+        output += '</li>\n'
 
 s = x.replace("__REPLACE_ANIMALS_INFO__", output)
 
