@@ -20,16 +20,21 @@ for item in animals_data:
     diet = characteristics.get("diet")
     animal_type = characteristics.get("type", "N/A")
     if animal_type == "N/A":
-        output += '<li class="cards__item">'
-        output += f"Name: {name}<br/>\n"
-        output += f"Location: {location}<br/>\n"
-        output += f"Diet: {diet}<br/>\n"
+        output += '<li class="cards__item">\n'
+        output += f'<div class="card__title">{name}</div>\n'
+        output += '<p class="card__text">\n'
+        output += f"<strong>Location:</strong> {location}<br>\n"
+        output += f"<strong>Diet:</strong> {diet}<br>\n"
+        output += '</p>\n'
+        output += '</li>\n'
     else:
-        output += '<li class="cards__item">'
-        output += f"Name: {name}<br/>\n"
-        output += f"Location: {location}<br/>\n"
-        output += f"Diet: {diet}<br/>\n"
-        output += f"Type: {animal_type}<br/>\n"
+        output += '<li class="cards__item">\n'
+        output += f'<div class="card__title">{name}</div>\n'
+        output += '<p class="card__text">\n'
+        output += f"<strong>Location:</strong> {location}<br>\n"
+        output += f"<strong>Diet:</strong> {diet}<br>\n"
+        output += f"<strong>Type:</strong> {animal_type}<br>\n"
+        output += '</p>\n'
         output += '</li>\n'
 
 s = x.replace("__REPLACE_ANIMALS_INFO__", output)
